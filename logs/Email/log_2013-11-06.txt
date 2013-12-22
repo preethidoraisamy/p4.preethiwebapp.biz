@@ -1,0 +1,48 @@
+2013-11-06 8:35:18 - INFO --> -------------------------- 
+2013-11-06 8:35:18 - INFO --> Controller/Method: users/p_signup 
+2013-11-06 8:35:18 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY webmaster@myapp.com 
+2013-11-06 8:35:18 - INFO --> From: Chatter (noreply@preethiwebapp.biz) 
+2013-11-06 8:35:18 - INFO --> To: Preethi (preethi_rajasekar16@yahoo.com),  
+2013-11-06 8:35:18 - INFO --> CC:  
+2013-11-06 8:35:18 - INFO --> BCC:  
+2013-11-06 8:35:18 - INFO --> Subject: Welcome to Chatter 
+2013-11-06 8:35:18 - INFO --> Body:  
+			 
+			Thanks for signing up! 
+			Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below. 
+			 
+			------------------------ 
+			Username: preethi_rajasekar16@yahoo.com 
+			------------------------ 
+			 
+			Please 
+2013-11-06 8:35:19 - INFO --> FAILED TO SEND EMAIL 
+2013-11-06 8:39:27 - INFO --> -------------------------- 
+2013-11-06 8:39:27 - INFO --> Controller/Method: users/p_signup 
+2013-11-06 8:39:27 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY webmaster@myapp.com 
+2013-11-06 8:39:27 - INFO --> From: Chatter (noreply@preethiwebapp.biz) 
+2013-11-06 8:39:27 - INFO --> To: Preethi (preethi_rajasekar16@yahoo.com),  
+2013-11-06 8:39:27 - INFO --> CC:  
+2013-11-06 8:39:27 - INFO --> BCC:  
+2013-11-06 8:39:27 - INFO --> Subject: Welcome to Chatter 
+2013-11-06 8:39:27 - INFO --> Body:  
+			 
+			Thanks for signing up! 
+			Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below. 
+			 
+			------------------------ 
+			Username: preethi_rajasekar16@yahoo.com 
+			------------------------ 
+			 
+			Please 
+2013-11-06 8:39:28 - INFO --> FAILED TO SEND EMAIL 
+2013-11-06 9:03:03 - INFO --> -------------------------- 
+2013-11-06 9:03:03 - INFO --> Controller/Method: users/p_signup 
+2013-11-06 9:03:03 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY webmaster@myapp.com 
+2013-11-06 9:03:03 - INFO --> From: Chatter (noreply@preethiwebapp.biz) 
+2013-11-06 9:03:03 - INFO --> To: Judy Grimes (preethi_rajasekar16@yahoo.com),  
+2013-11-06 9:03:03 - INFO --> CC:  
+2013-11-06 9:03:03 - INFO --> BCC:  
+2013-11-06 9:03:03 - INFO --> Subject: Welcome to JavaBeans 
+2013-11-06 9:03:03 - INFO --> Body: Hi Judy, this is just a message to confirm your registration at JavaBeans.com 
+2013-11-06 9:03:04 - INFO --> FAILED TO SEND EMAIL 
