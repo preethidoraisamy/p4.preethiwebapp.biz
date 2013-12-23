@@ -23,9 +23,19 @@ class employee_controller extends base_controller {
 	-------------------------------------------------------------------------------------------------*/
 	public function profile() {
 		
-		$this->template->content = View::instance("v_employee_profile");
+		$this->template->content = View::instance("v_employee_editprofile");
 
 		$this->template->title   = "Employee profile";
+
+		$q = 
+			'SELECT * 
+			FROM employee
+			WHERE user_id = '.$this->user->user_id;
+
+		$post = DB::instance(DB_NAME)->select_row($q);
+
+        # Pass data to the view
+        $this->template->content->post = $post;
 		
 		echo $this->template;
 		
@@ -51,46 +61,48 @@ class employee_controller extends base_controller {
 
 		if($token)
 		{
-			if($_FILES['data']['size'] > 0)
-			{
-				$fileName = $_FILES['data']['name'];
-				$tmpName  = $_FILES['data']['tmp_name'];
-				$fileSize = $_FILES['data']['size'];
-				$fileType = $_FILES['data']['type'];
+			
 
-				$fp      = fopen($tmpName, 'r');
-				$content = fread($fp, filesize($tmpName));
-				$content = addslashes($content);
-				fclose($fp);
+			DB::instance(DB_NAME)->update('employee', $_POST, 'WHERE user_id = '.$this->user->user_id);
 
-				$data    = Array('data' => $content, 'user_id' => $_POST['user_id'], 'filename' => $tmpName, 'filesize' => $fileSize, 'filetype' => $fileType, 'description' =>$_POST['description'], 'created' => $_POST['created'], 'modified'=> $_POST['modified'], 'skills'=>$_POST['skills']);
-				
-
-				DB::instance(DB_NAME)->update('employee', $data, 'WHERE user_id = '.$this->user->user_id);
-
-
-			}
 		}
 		else
 		{
 
-			if($_FILES['data']['size'] > 0)
-			{
-				$fileName = $_FILES['data']['name'];
-				$tmpName  = $_FILES['data']['tmp_name'];
-				$fileSize = $_FILES['data']['size'];
-				$fileType = $_FILES['data']['type'];
+			$user_ids = DB::instance(DB_NAME)->insert('employee', $_POST);
 
-				$fp      = fopen($tmpName, 'r');
-				$content = fread($fp, filesize($tmpName));
-				$content = addslashes($content);
-				fclose($fp);
+		}
 
-				$data    = Array('data' => $content, 'user_id' => $_POST['user_id'], 'filename' => $tmpName, 'filesize' => $fileSize, 'filetype' => $fileType, 'description' =>$_POST['description'], 'created' => $_POST['created'], 'modified'=> $_POST['modified'], 'skills'=>$_POST['skills']);
-				$user_ids = DB::instance(DB_NAME)->insert('employee', $data);
+		$q = 
+			'SELECT * 
+			FROM employee
+			WHERE user_id = '.$this->user->user_id;
 
+		# If there was, this will return the token	   
+		$profileData = DB::instance(DB_NAME)->select_rows($q);
 
-			}
+		if($profileData)
+		{
+
+			$this->template->content = View::instance("v_employee_display");
+			
+			# Run query	
+			
+
+			# Variable to hold the number of posts 
+			#$mycount = count($posts);
+			
+			# Pass $posts array to the view
+			$this->template->content->profileData = $profileData;
+			#echo $mycount;
+
+			$this->template->title   = "Display profile";
+			
+			echo $this->template;
+		}
+		else
+		{
+			die("Some problem with the data");
 		}
 
 	
@@ -106,10 +118,7 @@ public function display() {
 
 	# Set up query
 		$q = 'SELECT 
-			    employee.description,
-			    employee.data,
-			    employee.filename,
-			    employee.skills
+			    *
 			FROM employee
 			WHERE employee.user_id = '.$this->user->user_id;
 
@@ -142,6 +151,64 @@ public function display() {
 			
 			echo $this->template;
 		}
+	
+}
+
+public function searchemployer() {
+	
+
+	$this->template->content = View::instance("v_employee_searchemployer");
+
+	$this->template->title   = "Search Employer";
+	
+	echo $this->template;
+
+	
+}
+
+public function p_searchemployer() {
+	
+	$q = "SELECT employer_job.id,
+				 employer_job.job_title,
+				 employer_job.location,
+				 employer_job.modified,
+				 employer_job.telecommute,
+				 employer_job.skills,
+				 employer.companyName
+        		FROM employer_job
+        		INNER JOIN employer 
+			    ON employer_job.user_id = employer.user_id
+        		WHERE skills 
+        		like '%".$_POST['skills']."%'";
+
+ 
+
+        $listedJobData = DB::instance(DB_NAME)->select_rows($q);
+
+		if($listedJobData)
+		{
+
+			$this->template->content = View::instance("v_employee_searchresults");
+			
+			# Run query	
+			
+
+			# Variable to hold the number of posts 
+			#$mycount = count($posts);
+			
+			# Pass $posts array to the view
+			$this->template->content->listedJobData = $listedJobData;
+			#echo $mycount;
+
+			$this->template->title   = "Posted Jobs";
+			
+			echo $this->template;
+		}
+		else
+		{
+			die("No jobs posted");
+		}
+
 	
 }	
 	

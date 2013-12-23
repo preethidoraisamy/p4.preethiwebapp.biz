@@ -3,22 +3,25 @@
 <?php if(isset($listedJobData)): ?>
 	<table border="1">
 				<tr>
-				<th>Candidate Name</th>
+				<th>Job Title</th>
+				<th>Employer</th>
 				<th>Skills</th>
 				<th>Location</th>
-				<th>Last update</th>
+				<th>Posted on</th>
 				</tr>
 
 	<?php foreach($listedJobData as $jobs): ?>
-       				   
+        
+
+				   
 				   <tr>
-				   <td><a href='/employer/candidatedetails/<?=$jobs['id']?>'><?=$jobs['fullname']?></a></td>
+				   <td><a href='/employer/details/<?=$jobs['id']?>'><?=$jobs['job_title']?></a></td>
+				   <td><?=$jobs['companyName']?></td>
 				   <td><?=$jobs['skills']?></td>
-				   <td><?=$jobs['zipcode']?></td>
+				   <td><?=$jobs['location']?></td>
 				   <td><?=Time::display($jobs['modified'])?></td>
 					</tr>
-					
-	
+
         
     <?php endforeach; ?>
     </table>

@@ -6,7 +6,7 @@
 			<!-- Sign Up form -->
 			<legend>Sign up</legend>
 
-				First Name <input type='text' name='first_name' required="required"><br>
+				First Name <input type='text' name='first_name' required="required" id ="first_name"><br>
 				Last Name <input type='text' name='last_name' required="required"><br>
 				Email <input type='text' name='email' required="required"><br>
 				Password <input type='password' name='password' id = 'signup-pwd' required="required"><br>
@@ -14,7 +14,7 @@
 				Log in type<select name='login_type'>
 								<option value='employee'>Employee</option>
 								<option value='employer'>Employer</option>
-							</select>
+							</select><br>
 				
 				<input type='submit' id='signup-btn' value='Sign Up'>
 		

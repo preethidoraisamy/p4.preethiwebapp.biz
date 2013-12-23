@@ -107,6 +107,12 @@ class employer_controller extends base_controller {
 			die("Some problem with the data");
 		}
 
+		$this->template->content = View::instance("v_employer_display");
+			
+		$this->template->title   = "Display profile";
+			
+		echo $this->template;
+
 	
 	}
 	
@@ -425,40 +431,70 @@ public function p_viewJob($post_id) {
 
     }
 
-     public function searchresults() {
+     public function p_searchemployee() {
 
-     	$p = "sql";
-
-        $q = "SELECT skills
-        		FROM employee 
+     	$q = "SELECT *
+        		FROM employee
         		WHERE skills 
-        		like '%".$p."%'";
+        		like '%".$_POST['skills']."%'";
 
-        # Run query
-        $post = DB::instance(DB_NAME)->select_row($q);
+ 
+        $listedJobData = DB::instance(DB_NAME)->select_rows($q);
 
-        if($post)
+		if($listedJobData)
 		{
 
 			$this->template->content = View::instance("v_employer_searchresults");
 			
-					
+			# Run query	
+			
+
+			# Variable to hold the number of posts 
+			#$mycount = count($posts);
+			
 			# Pass $posts array to the view
-			$this->template->content->post = $post;
+			$this->template->content->listedJobData = $listedJobData;
 			#echo $mycount;
 
-			$this->template->title   = "Search results";
-
-			// echo $post['user_id'];
-			// echo $post['id'];
-			// echo $post['skills'];
+			$this->template->title   = "Posted Jobs";
 			
 			echo $this->template;
 		}
 		else
 		{
-			die("No candidates with required skills available");
+			die("No jobs posted");
 		}
-    }
+	}
+
+	/*-------------------------------------------------------------------------------------------------
+	Display a new post form
+	-------------------------------------------------------------------------------------------------*/
+	public function candidatedetails($post_id) {
+
+       
+        
+        # Set up query to get all users
+        $q = 'SELECT *
+        		FROM employee 
+        		where id = '.$post_id;
+         
+        $profileData = DB::instance(DB_NAME)->select_rows($q);
+
+		if($profileData)
+		{
+			#$profileData['login'] = 2;
+
+			$this->template->content = View::instance("v_employee_display");
+				
+			# Pass $posts array to the view
+			$this->template->content->profileData = $profileData;
+
+			$this->template->title   = "Display profile";
+			
+			echo $this->template;
+		}
+
+
+    }	
 	
 } # eoc

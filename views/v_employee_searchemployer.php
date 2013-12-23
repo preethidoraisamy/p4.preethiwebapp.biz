@@ -1,11 +1,11 @@
-<!-- Edit form -->
-<form method='post' action='/employer/p_searchemployee'>
+<!-- Search for a Employer -->
+<form method='post' action='/employee/p_searchemployer'>
 
 	<section class="formalign">
 		<fieldset class="txtalign">
 
 			<!-- Edit with details -->
-			<legend>Search Candidates</legend>
+			<legend>Search Employer</legend>
 
 				
 
@@ -17,6 +17,6 @@
 		
 		</fieldset>
 	</section>
- 
+    
 
 </form>

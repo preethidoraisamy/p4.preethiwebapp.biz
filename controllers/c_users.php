@@ -33,10 +33,7 @@ class users_controller extends base_controller {
     -------------------------------------------------------------------------------------------------*/
     public function p_signup() {
 
-    	$login_array = [
-	    "employee" => 1,
-	    "employer" => 2,
-		];
+  
 
     	#To check whether the email is already registered
     	$q = 
@@ -74,12 +71,16 @@ class users_controller extends base_controller {
 			    # Create a hashed token
 			    $_POST['token']    = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
 
-			   // echo $_POST['logintype'];
+			   if($_POST['login_type'] == "employee")
+			   {
+			   		$_POST['login_type'] =  1;
+			   }
+			   else if($_POST['login_type'] == "employer")
+			   {
+			    	$_POST['login_type'] = 2;
 
-			    $_POST['login_type'] =  $login_array[$_POST['login_type']];
+			   }
 
-			    echo $_POST['login_type'];
-		    
 			    # Insert the new user    
 			    DB::instance(DB_NAME)->insert_row('users', $_POST);
 	 
@@ -240,19 +241,19 @@ class users_controller extends base_controller {
 		       # Update the database with new password
 		       DB::instance(DB_NAME)->update('users',$data, 'WHERE user_id ='. $this->user->user_id);
 
-		       die('Password is successfully updated. <a href="/posts/mypost/">My posts</a>');
+		       die('Password is successfully updated. <a href="/users/profile/">Home</a>');
 			}
 			# When two new password does not match
 			else
 			{
-				die('New password does not match. <a href="/users/reset/">Try again</a>');
+				die('New password does not match. <a href="/users/reset/">Try again</a> OR Home <a href="/users/profile/">Home</a>');
 				
 			}
 		}
 		# Failure - password does not match
 		else
 		{
-			die('Old password does not match. <a href="/users/reset/">Try again</a>');
+			die('Old password does not match. <a href="/users/reset/">Try again</a> OR Home <a href="/users/profile/">Home</a>');
 			
 		}
 	}

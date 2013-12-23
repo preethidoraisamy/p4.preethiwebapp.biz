@@ -13,7 +13,7 @@
                 <article>
                         <figure>
                                 <figcaption>Welcome to Job search, both employees and employer can search for Move</figcaption>
-                                <img src="images/LandingPage/landinginage.jpg" alt="Chatter" />
+                                <img src="images/LandingPage/landinginage.jpg" alt="Job Search" />
                               
                         </figure>
                 </article>                               
@@ -23,10 +23,9 @@
          <!-- /Additional features section -->
          <section class="features">
                 <article>
-                         <h2>+ Features</h2>
-                         <h3> Edit post</h3>
-                         <h3> Delete post</h3>
-                         <h3> Change password</h3>
+                         <h2>About</h2>
+                         <p> Candidates can search for avaliable position and Employer can search for suitable candidates and contact them with the details given</p>
+                         
                 </article>      
          </section>
 
