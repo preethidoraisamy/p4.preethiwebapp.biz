@@ -1,5 +1,6 @@
 <!-- Employer - complete job list -->
 <?php if(isset($listedJobData)): ?>
+	<p class="class_notify"> List all my posted jobs. Can remove the job at any time</p>
 	<table border="1">
 				<tr>
 				<th>Job Title</th>

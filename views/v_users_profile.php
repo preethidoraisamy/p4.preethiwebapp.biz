@@ -1,2 +1,2 @@
 <!-- Profile details -->
-<h3> This is your home page</h3>
+<h3> Helps to find a better job which suites your needs</h3>

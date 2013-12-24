@@ -1,18 +1,18 @@
-<!-- Otheers post -->
-<!-- if I have any post -->
+<!--View applied candidates details -->
 <?php if(isset($profileData)): ?>
 
 	<?php foreach($profileData as $profile): ?>
+	<!--Verify data -->
+	<?php if(!empty($profile['fullname'])): ?>
+	<?php if($user->login_type == 2): ?>
+		<p class="class_notify"> You can contact the Candidates with Prefered Email or through Phone</p>
+	<?php endif; ?>
         <div class='profileData'>
         	<section class="formalign">
 				<fieldset class="txtalign">
-				<?php if(!empty($profile['fullname'])): ?>
-				<legend>Profile</legend>
-
-
 				
-				
-				
+				<legend>Profile</legend>	
+								
 				   Full Name:<?=$profile['fullname']?><br>
 				   Experience:<?=$profile['experience']?><br>
 				   Last Company:<?=$profile['last_company']?><br>
@@ -29,19 +29,17 @@
 						<a href='/employee/profile'>Edit</a><br>
 					<!-- When EMployer display  -->
 					<?php elseif($user->login_type == 2): ?>
-						<a href='/employer/p_searchemployee/backToSearch'>BACK</a>
-					<?php endif; ?>
+						<a href='/employer/p_searchemployee/backToSearch'>BACK</a>					
 
 		        <?php endif; ?>
 		        </fieldset>
 			</section>
         </div>
+        <?php endif; ?>
         
     <?php endforeach; ?>
 
-    <?php if($user->login_type == 2): ?>
-		<p class="class_notify"> You can contact the Candidates with Prefered Email or through Phone</p>
-	<?php endif; ?>
+    
 
     <?php else: ?>
     <?php endif; ?>

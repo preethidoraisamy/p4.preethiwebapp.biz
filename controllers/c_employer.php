@@ -177,27 +177,10 @@ public function p_postJob() {
 	$_POST['created']  = Time::now();
 	$_POST['modified'] = Time::now();
 
-	$q = 
-		'SELECT user_id 
-		FROM employer_job
-		WHERE user_id = '.$this->user->user_id;
+	$user_ids = DB::instance(DB_NAME)->insert('employer_job', $_POST);
 
-	# If there was, this will return the token	   
-	$token = DB::instance(DB_NAME)->select_field($q);
-
-	#To edit the posted jobs
-	if($token)
-	{
-		
-			DB::instance(DB_NAME)->update('employer_job', $_POST, 'WHERE user_id = '.$this->user->user_id);
-
-	}
-	#To add a new job
-	else
-	{
-		$user_ids = DB::instance(DB_NAME)->insert('employer_job', $_POST);
-
-	}
+	# after adding a job go to list jobs
+	Router::redirect('/employer/listMyJob');
 	
 }
 
@@ -429,15 +412,16 @@ Display the suitable Candidates
      	$search_for = '';
      	$value_found = False;
 
-     	#To retain the search results - after the work done
-     	if($passed_value != 'none')
-     	{
-     		$p  = 'SELECT current_search.user_id,
+     	$p  = 'SELECT current_search.user_id,
 	    			  current_search.skills
 	        		FROM current_search
 	        		WHERE user_id = '.$this->user->user_id;
 
-		    $value = DB::instance(DB_NAME)->select_rows($p);
+		$value = DB::instance(DB_NAME)->select_rows($p);
+
+     	#To retain the search results - after the work done
+     	if($passed_value != 'none')
+     	{     		
 
 		    # searches in the table to find the last search
 		    if($value)
@@ -452,8 +436,15 @@ Display the suitable Candidates
 		    $_POST['skills'] = $search_for;
 
 		}
+		# from user
 		else
 		{
+			# when there already an entry
+			if($value)
+		    {
+		    	$value_found = True;
+		    }
+		    
 			$search_for = $_POST['skills'];
 		}
 

@@ -85,7 +85,7 @@ class users_controller extends base_controller {
 			    DB::instance(DB_NAME)->insert_row('users', $_POST);
 	 
 			    # Send them to the login page
-			    Router::redirect('/users/login');
+			    die('Registration Successfull. <a href="/users/login">Log in</a>');
 		}
 	}
 	    

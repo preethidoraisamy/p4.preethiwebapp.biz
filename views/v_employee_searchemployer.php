@@ -5,7 +5,7 @@
 		<fieldset class="txtalign">
 
 			<!-- Edit with details -->
-			<legend>Search Employer</legend>
+			<legend>Search Jobs</legend>
 
 				
 

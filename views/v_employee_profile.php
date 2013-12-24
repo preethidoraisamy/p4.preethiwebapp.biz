@@ -8,7 +8,7 @@
 				Full Name(40 characters)
 				<input type='text' name='fullname' maxlength="40" required="required"><br>
 
-				Experience(2 characters)
+				Experience - In years(2 characters)
 				<input type='text' name='experience' maxlength="2" id = "experience" required="required"><br>
 
 				Last company(40 characters)

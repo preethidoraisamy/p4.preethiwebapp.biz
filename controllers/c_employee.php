@@ -177,6 +177,7 @@ public function p_searchemployer($passed_values) {
 
 	    $value = DB::instance(DB_NAME)->select_rows($p);
 
+
 	    if($value)
 	    {
 	    	$search_for = $value[0]['skills'];
@@ -192,6 +193,7 @@ public function p_searchemployer($passed_values) {
 	#when passed ny the view
 	else
 	{
+
 		$search_for = $_POST['skills'];
 	}
 
