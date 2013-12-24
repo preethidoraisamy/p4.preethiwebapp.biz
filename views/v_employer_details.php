@@ -1,3 +1,4 @@
+<!-- Employer job details display -->
 <form method='post' >
 
 	<section class="formalign">
@@ -22,10 +23,13 @@
 	
 				<br>
 				
-				<!-- <a href='/employer/p_searchemployer'>BACK</a> -->
 
+				<!-- When EMployer display  -->
 				<?php if($user->login_type == 2): ?>
 					<a href='/employer/editdetails/<?=$post['id']?>'>EDIT</a>
+				<!-- When EMployee display  -->
+				<?php elseif($user->login_type == 1): ?>
+					<a href='/employee/p_searchemployer/backToSearch'>BACK</a>
 				<?php endif; ?>
 				
 		

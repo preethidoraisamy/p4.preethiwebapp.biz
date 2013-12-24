@@ -1,5 +1,5 @@
-<!-- Edit form -->
-<form method='post' action='/employer/p_searchemployee'>
+<!-- Employer Search form - search by skills -->
+<form method='post' action='/employer/p_searchemployee/none'>
 
 	<section class="formalign">
 		<fieldset class="txtalign">

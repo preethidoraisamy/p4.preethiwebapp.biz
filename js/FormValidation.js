@@ -1,24 +1,3 @@
-var password ="";
-var conpassword ="";
-/*-------------------------------------------------------------------------------------------------
-Get the Sign up password for validation
--------------------------------------------------------------------------------------------------*/
-$('#signup-pwd').keyup(function() {
-
-	// Figure out what the user typed in
-	password = $(this).val();
-	
-});
-
-/*-------------------------------------------------------------------------------------------------
-Get the Sign up password for validation
--------------------------------------------------------------------------------------------------*/
-$('#signup-conpwd').keyup(function() {
-
-	// Figure out what the user typed in
-	conpassword = $(this).val();
-	
-});
 
 /*-------------------------------------------------------------------------------------------------
 Phone number validation - phone # should be number
@@ -66,4 +45,19 @@ $('#experience').keyup(function() {
 	}
 	
 });
+/*-------------------------------------------------------------------------------------------------
+Zipcode validation - Zipcode # should be number
+-------------------------------------------------------------------------------------------------*/
+$('#zipcode').keyup(function() {
+
+	// Figure out what the user typed in
+	var phone_no = $(this).val();
+	if(isNaN(phone_no))
+	{
+	 	var len = phone_no.length;
+		document.getElementById("zipcode").value = phone_no.substring(0,len-1);
+	}
+	
+});
+
 

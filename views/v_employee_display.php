@@ -6,13 +6,13 @@
         <div class='profileData'>
         	<section class="formalign">
 				<fieldset class="txtalign">
+				<?php if(!empty($profile['fullname'])): ?>
 				<legend>Profile</legend>
 
 
-				<?php if($user->login_type == 1): ?>
-					<a href='/employee/profile'>Edit</a><br>
-				<?php endif; ?>
-				   
+				
+				
+				
 				   Full Name:<?=$profile['fullname']?><br>
 				   Experience:<?=$profile['experience']?><br>
 				   Last Company:<?=$profile['last_company']?><br>
@@ -23,6 +23,16 @@
 				   Prefered Email:<?=$profile['pemail']?><br>
 		           Description:<?=$profile['description']?><br>
 		           Skills:<?=$profile['skills']?><br>
+
+		           <!-- When EMployee display  -->
+		           <?php if($user->login_type == 1): ?>
+						<a href='/employee/profile'>Edit</a><br>
+					<!-- When EMployer display  -->
+					<?php elseif($user->login_type == 2): ?>
+						<a href='/employer/p_searchemployee/backToSearch'>BACK</a>
+					<?php endif; ?>
+
+		        <?php endif; ?>
 		        </fieldset>
 			</section>
         </div>

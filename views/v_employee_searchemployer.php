@@ -1,5 +1,5 @@
 <!-- Search for a Employer -->
-<form method='post' action='/employee/p_searchemployer'>
+<form method='post' action='/employee/p_searchemployer/none'>
 
 	<section class="formalign">
 		<fieldset class="txtalign">

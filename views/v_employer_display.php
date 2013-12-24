@@ -1,5 +1,4 @@
-<!-- Otheers post -->
-<!-- if I have any post -->
+<!-- Employer profile display form -->
 <?php if(isset($profileData)): ?>
 
 	<?php foreach($profileData as $profile): ?>

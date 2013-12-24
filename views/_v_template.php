@@ -35,6 +35,7 @@
 					<li><a href='/employer/postJob'>Post Job</a></li>
 					<li><a href='/employer/listMyJob'>List Job</a></li>
 					<li><a href='/employer/searchemployee'>Search</a></li>
+					<li><a href='/employer/appliedjob'>Applied Candidates</a></li>
 					<li><a href='/users/reset'>Change password</a></li>
 					<li><a href='/users/logout'>Logout</a></li>	
 				<?php endif; ?>
