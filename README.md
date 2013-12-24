@@ -29,10 +29,10 @@ Javascript:
 
 Same user - CANDIDATE :
 Email - r@y.com
-pwd - r
+pwd - p
 
 Same user - EMPLOYER:
 Email - p@y.com
-pwd - p
+pwd - r
 
 Sample search sql
