@@ -8,18 +8,18 @@
 			<legend>Edit Post</legend>
 
 				
-				Job Title:<?=$post['id']?><br> 
-		          Position Duties:<?=$post['position_duties']?><br> 
-		           Requirements:<?=$post['requirement']?><br>
-		           Responsibilities:<?=$post['responsibilities']?><br>
-		           Location:<?=$post['location']?><br>
-		           Telecommute:<?=$post['telecommute']?><br>
-		           Pay Rate:<?=$post['payrate']?><br>
-		           Position ID:<?=$post['position_id']?><br>
-		           Tax Term:<?=$post['tax_term']?><br>
-		           Travel Requirements:<?=$post['travel_requirement']?><br>
-		           Skills:<?=$post['skills']?><br>
-		           Work Authorization:<?=$post['work_authorization']?><br>
+				<b>Job Title:</b><?=$post['id']?><br> 
+		          <b>Position Duties:</b><?=$post['position_duties']?><br> 
+		           <b>Requirements:</b><?=$post['requirement']?><br>
+		           <b>Responsibilities:</b><?=$post['responsibilities']?><br>
+		           <b>Location:</b><?=$post['location']?><br>
+		           <b>Telecommute:</b><?=$post['telecommute']?><br>
+		           <b>Pay Rate:</b><?=$post['payrate']?><br>
+		           <b>Position ID:</b><?=$post['position_id']?><br>
+		           <b>Tax Term:</b><?=$post['tax_term']?><br>
+		           <b>Travel Requirements:</b><?=$post['travel_requirement']?><br>
+		           <b>Skills:</b><?=$post['skills']?><br>
+		           <b>Work Authorization:</b><?=$post['work_authorization']?><br>
 	
 				<br>
 				

@@ -9,14 +9,12 @@
 
 				   <a href='/employer/profile'>Edit</a><br>
 
-				   Name:<?=$profile['companyName']?><br>
-		           Description:<?=$profile['description']?><br>
-		           Revenue:<?=$profile['revenue']?><br>
-		           Industry:<?=$profile['industry']?><br>
-		           Address:<?=$profile['street_name']?><br>
-		           <?=$profile['city']?><br>
-		           <?=$profile['state']?> - <?=$profile['zipcode']?><br>
-		           Total jobs posted<?=$profile['no_job_posted']?><br>
+				   <b>Name:</b><?=$profile['companyName']?><br>
+		           <b>Description:</b><?=$profile['description']?><br>
+		           <b>Revenue:</b><?=$profile['revenue']?><br>
+		           <b>Industry:</b><?=$profile['industry']?><br>
+		           <b>Address:</b><?=$profile['street_name']?>,<?=$profile['city']?><br>, <?=$profile['state']?> - <?=$profile['zipcode']?><br>
+		           <b>Total jobs posted</b><?=$profile['no_job_posted']?><br>
 		        </fieldset>
 			</section>
         </div>

@@ -13,16 +13,16 @@
 				
 				<legend>Profile</legend>	
 								
-				   Full Name:<?=$profile['fullname']?><br>
-				   Experience:<?=$profile['experience']?><br>
-				   Last Company:<?=$profile['last_company']?><br>
-				   Highest Degree:<?=$profile['highest_degree']?><br>
-				   Major:<?=$profile['major']?><br>
-				   Zipcode:<?=$profile['zipcode']?><br>
-				   Phone:<?=$profile['phone']?><br>
-				   Prefered Email:<?=$profile['pemail']?><br>
-		           Description:<?=$profile['description']?><br>
-		           Skills:<?=$profile['skills']?><br>
+				   <b>Full Name:</b><?=$profile['fullname']?><br>
+				   <b>Experience:</b><?=$profile['experience']?><br>
+				   <b>Last Company:</b><?=$profile['last_company']?><br>
+				   <b>Highest Degree:</b><?=$profile['highest_degree']?><br>
+				   <b>Major:</b><?=$profile['major']?><br>
+				   <b>Zipcode:</b><?=$profile['zipcode']?><br>
+				   <b>Phone:</b><?=$profile['phone']?><br>
+				   <b>Prefered Email:</b><?=$profile['pemail']?><br>
+		           <b>Description:</b><?=$profile['description']?><br>
+		           <b>Skills:</b><?=$profile['skills']?><br>
 
 		           <!-- When EMployee display  -->
 		           <?php if($user->login_type == 1): ?>
